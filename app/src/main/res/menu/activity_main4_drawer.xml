@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_camera"
+            android:icon="@drawable/ic_person_black_24dp"
+            android:title="Login" />
+        <item
+            android:id="@+id/nav_store"
+            android:icon="@drawable/ic_local_grocery_store_black_24dp"
+            android:title="Our Store" />
+        <item
+            android:id="@+id/nav_contactus"
+            android:icon="@drawable/ic_local_phone_black_24dp"
+            android:title="Contact us" />
+        <item
+            android:id="@+id/nav_visit"
+            android:icon="@drawable/ic_local_phone_black_24dp"
+            android:title="Visit Our Offices" />
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Share" />
+            <item
+                android:id="@+id/nav_aboutus"
+                android:icon="@drawable/ic_more_black_24dp"
+                android:title="About Us" />
+        </menu>
+    </item>
+
+</menu>
