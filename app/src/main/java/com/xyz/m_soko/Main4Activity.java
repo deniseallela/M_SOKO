@@ -29,6 +29,11 @@ public class Main4Activity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent mail=new Intent(Intent.ACTION_SENDTO,Uri.fromParts("mailto","wanjirugakenia20@gmail.com",null));
+                mail.putExtra(Intent.EXTRA_SUBJECT,"Your Feedback is key");
+                mail.putExtra(Intent.EXTRA_TEXT,"Thank you for choosing us");
+                startActivity(Intent.createChooser(mail,"Share mail via"));
+
                 Snackbar.make(view, "Feedback is key", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
@@ -107,7 +112,8 @@ public class Main4Activity extends AppCompatActivity
 
 
         } else if (id == R.id.nav_aboutus) {
-
+            Intent about=new Intent(Main4Activity.this,MainActivity2.class);
+            startActivity(about);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

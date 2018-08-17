@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
             public void run() {
                 try {
 //                    the progress bar will load for 2 seconds
-                    sleep(4 * 1000);
+                    sleep(1 * 1000);
                     Intent jj = new Intent(MainActivity.this, Main4Activity.class);
                     startActivity(jj);
                     finish();

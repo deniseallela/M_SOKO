@@ -6,31 +6,25 @@
     android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="200dp"
+        android:id="@+id/imgPost"
+        android:layout_width="380dp"
         android:layout_height="150dp"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
+        android:layout_below="@+id/tvName"
+        android:foregroundGravity="center"
         app:srcCompat="@drawable/lettuce" />
 
-    <EditText
-        android:id="@+id/editText4"
-        android:layout_width="93dp"
+    <TextView
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textColor="#2e9303"
+        android:textSize="40sp"
+        android:id="@+id/tvName"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/button"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="51dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Lettuce" />
+        android:layout_centerHorizontal="true"
+        android:text="TextView" />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="97dp"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/imageView3"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="0dp"
-        android:text="View" />
+
 </RelativeLayout>

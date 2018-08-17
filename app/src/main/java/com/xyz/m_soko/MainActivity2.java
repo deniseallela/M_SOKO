@@ -1,40 +1,48 @@
 package com.xyz.m_soko;
 
-import android.content.Intent;
-import android.support.v4.view.GestureDetectorCompat;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.GestureDetector;
-import android.view.MotionEvent;
+import android.view.View;
+import android.widget.ImageView;
+
+import java.io.ByteArrayOutputStream;
 
 public class MainActivity2 extends AppCompatActivity {
-
-    private GestureDetectorCompat movement;
-
+        ImageView img1,img2,img3,img4;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);//get music placed on the direcory raw
-        movement = new GestureDetectorCompat(this, new LearnGesture());
-        //LearnGesture is a class file
+        setContentView(R.layout.activity_main2);//get music placed on the direcory raw
+            img1 = findViewById(R.id.imageView);
+            img2 = findViewById(R.id.imageViewfb);
+            img3 = findViewById(R.id.imageViewig);
+            img4 = findViewById(R.id.imageViewtweet);
+        Bitmap image1 =((BitmapDrawable)img1.getDrawable()).getBitmap();
 
+        ByteArrayOutputStream byteArrayOutputStream=new ByteArrayOutputStream();
+
+        image1.compress(Bitmap.CompressFormat.JPEG,50/100,byteArrayOutputStream);
+
+
+        Bitmap image2 =((BitmapDrawable)img2.getDrawable()).getBitmap();
+
+        ByteArrayOutputStream byteArrayOutputStream2=new ByteArrayOutputStream();
+
+        image2.compress(Bitmap.CompressFormat.JPEG,50/100,byteArrayOutputStream2);
+
+        Bitmap image3 =((BitmapDrawable)img3.getDrawable()).getBitmap();
+
+        ByteArrayOutputStream byteArrayOutputStream3=new ByteArrayOutputStream();
+
+        image3.compress(Bitmap.CompressFormat.JPEG,50/100,byteArrayOutputStream3);
+
+        Bitmap image4 =((BitmapDrawable)img4.getDrawable()).getBitmap();
+
+        ByteArrayOutputStream byteArrayOutputStream4=new ByteArrayOutputStream();
+
+        image4.compress(Bitmap.CompressFormat.JPEG,50/100,byteArrayOutputStream4);
+    }
     }
 
-    public boolean onTouchEvent(MotionEvent event) {
-        this.movement.onTouchEvent(event);
-        return super.onTouchEvent(event);
-    }
-
-    class LearnGesture extends GestureDetector.SimpleOnGestureListener {
-        //a gesture listener tells which gesture has been made
-
-        @Override
-        public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
-            if (e2.getX() > e1.getX()) {
-                Intent hh = new Intent(MainActivity2.this, Listview.class);
-                startActivity(hh);
-            }
-            return true;
-        }
-    }
-}
